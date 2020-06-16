@@ -22,16 +22,17 @@ app.get('/posts', AuthenticateToken, (req, res) =>{
   res.json(posts.filter(post => post.username === req.user.name))
 })
 
-app.post('/login', (req, res) => {
-  //Authenticate User
+//Now authentication only excute in authServer
+// app.post('/login', (req, res) => {
+//   //Authenticate User
 
-  const username = req.body.username
-  const user = { name: username}
+//   const username = req.body.username
+//   const user = { name: username}
 
-  const accessToken = jwt.sign(user, 
-    process.env.ACCESS_TOKEN_SECRET)
-  res.json({ accessToken: accessToken })
-})
+//   const accessToken = jwt.sign(user, 
+//     process.env.ACCESS_TOKEN_SECRET)
+//   res.json({ accessToken: accessToken })
+// })
 
 //add a middleware
 /* get the token they sent to us and verify, if it valid

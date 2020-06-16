@@ -6,7 +6,7 @@ const app = express()
 const jwt = require('jsonwebtoken')
 
 app.use(express.json())
-
+/* No longer need posts in port 4000
 const posts = [
   {
     username: 'Kyle',
@@ -21,6 +21,7 @@ app.get('/posts', AuthenticateToken, (req, res) =>{
   //if token is valid, will return a req.user, let's check and only return if the name is the same
   res.json(posts.filter(post => post.username === req.user.name))
 })
+*/
 
 app.post('/login', (req, res) => {
   //Authenticate User
