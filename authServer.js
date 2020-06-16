@@ -29,15 +29,19 @@ app.post('/login', (req, res) => {
   const username = req.body.username
   const user = { name: username}
 
-  const accessToken = jwt.sign(user, 
-    process.env.ACCESS_TOKEN_SECRET)
-  res.json({ accessToken: accessToken })
+  const accessToken = generateAccessToken(user)
+  //create a refresh token
+  const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
+  res.json({ accessToken: accessToken, refreshToken: refreshToken })
 })
-
-//add a middleware
-/* get the token they sent to us and verify, if it valid
+/*add new function for both AccessToken and refreshToken*/
+function generateAccessToken(user) {
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15s' })
+}
+/* add a middleware
+ get the token they sent to us and verify, if it valid
  return their user information (app.get), so we need to add
- this middleware into app.get('/posts') */
+ this middleware into app.get('/posts') 
 function AuthenticateToken(req, res, next) {
   // we want this -- Bearer TOKEN --
   const authHeader = req.headers['authorization']
@@ -51,4 +55,6 @@ function AuthenticateToken(req, res, next) {
   })
   
 }
+*/
+
 app.listen(4000)

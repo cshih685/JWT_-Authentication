@@ -1,6 +1,6 @@
 //get information from port 3000
 GET http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTU5MjMzNDQxNn0.fSnIt6J7Ws7eZBOnPRqyp32tlnVwzh6mo3DEO8cKfHo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTU5MjMzNDk0MywiZXhwIjoxNTkyMzM0OTU4fQ.GSrqKtJATab6ka81M_ry5rCkWRHjO38mweGabx_wyiw
 
 ###
 
