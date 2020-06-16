@@ -10,7 +10,7 @@ app.use(express.json())
 let refreshTokens = []
 
 
-/* app.post('/token', (req, res) => {
+app.post('/token', (req, res) => {
   const refreshToken = req.body.token
   if (refreshToken == null) return res.sendStatus(401)
   if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403)
@@ -19,9 +19,9 @@ let refreshTokens = []
     const accessToken = generateAccessToken({ name: user.name })
     res.json({ accessToken: accessToken })
   })
-}) */
+})
 
-/* delet the token */
+/* delete the token */
 app.delete('/logout', (req, res) => {
   refreshTokens = refreshTokens.filter(token => token !== req.body.token)
   res.sendStatus(204)
