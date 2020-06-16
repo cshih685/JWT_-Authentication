@@ -1,9 +1,18 @@
 //get information from port 3000
 GET http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTU5MjMzNDk0MywiZXhwIjoxNTkyMzM0OTU4fQ.GSrqKtJATab6ka81M_ry5rCkWRHjO38mweGabx_wyiw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTU5MjMzNTg4MCwiZXhwIjoxNTkyMzM1ODk1fQ.DEiTn62dsi0p030zopU1P3vYm2SeOU5eXpaMAMmOH6E
 
 ###
 
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+  "token": 
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTU5MjMzNTgzNH0.WUzuB42lpG4FOx1IbRkwRRPcZtchB9dSp3EyfZMucjY"
+}
+
+###
 //login in port 4000 (Auth)
 POST http://localhost:4000/login
 Content-Type: application/json
